@@ -9,8 +9,9 @@ public class showImage : MonoBehaviour
 
     void Start()
     {
+        int n = 2;
         // 載入 Resources 資料夾內名為 MyPhoto 的圖片
-        Texture2D texture = Resources.Load<Texture2D>("null");
+        Texture2D texture = Resources.Load<Texture2D>(Random.Range(1,n+1).ToString());
 
         if (texture != null)
         {
