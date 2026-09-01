@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/home.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/outDoor.unity
+    guid: af52e76d8ed1ab54fa8deaa2f451f5c7
+  - enabled: 1
+    path: Assets/Scenes/question.unity
+    guid: f26dcd42caa320249bd38268a114101d
   m_configObjects: {}
