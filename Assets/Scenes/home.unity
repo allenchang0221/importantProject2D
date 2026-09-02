@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 22842931}
   - component: {fileID: 22842930}
   m_Layer: 0
-  m_Name: Circle (5)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 820840880}
   - component: {fileID: 820840879}
   m_Layer: 0
-  m_Name: Circle (6)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 1402026499}
   - component: {fileID: 1402026498}
   m_Layer: 0
-  m_Name: Circle (4)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 1966652605}
   - component: {fileID: 1966652606}
   m_Layer: 0
-  m_Name: Circle (3)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
