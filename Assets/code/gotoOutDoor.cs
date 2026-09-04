@@ -17,7 +17,7 @@ public class gotoOutDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((player.transform.position - transform.position).magnitude < 2)
+        if ((player.transform.position - transform.position).magnitude < 2 && Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("outDoor");
         }
