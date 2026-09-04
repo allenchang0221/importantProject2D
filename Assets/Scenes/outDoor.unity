@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b377c5b89f104c4b85ea8f7e8ab75f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1123423370}
 --- !u!212 &464909613
 SpriteRenderer:
   m_ObjectHideFlags: 0
