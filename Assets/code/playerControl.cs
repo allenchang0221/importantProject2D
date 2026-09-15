@@ -23,22 +23,22 @@ public class playerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //transform.Translate(0, 1, 0);
-            rigidbody2D.AddForce(new Vector2(0, 1)*100);
+            rigidbody2D.AddForce(new Vector2(0, 1)* 50);
         }
         if (Input.GetKey(KeyCode.A))
         {
             //transform.Translate(-1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(-1, 0) * 100);
+            rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
         }
         if (Input.GetKey(KeyCode.S))
         {
             //transform.Translate(0, -1, 0);
-            rigidbody2D.AddForce(new Vector2(0, -1) * 100);
+            rigidbody2D.AddForce(new Vector2(0, -1) * 50);
         }
         if (Input.GetKey(KeyCode.D))
         {
             //transform.Translate(1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(1, 0) * 100);
+            rigidbody2D.AddForce(new Vector2(1, 0) * 50);
         }
         if (rigidbody2D.totalForce.magnitude == 0)
         {
