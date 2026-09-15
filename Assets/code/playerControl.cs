@@ -20,26 +20,34 @@ public class playerControl : MonoBehaviour
     void Update()
     {
         camera.transform.position = new Vector3(transform.position.x,transform.position.y,camera.transform.position.z);
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             //transform.Translate(0, 1, 0);
-            rigidbody2D.AddForce(new Vector2(0, 1)*10);
+            rigidbody2D.AddForce(new Vector2(0, 1)*100);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             //transform.Translate(-1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(-1, 0) * 10);
+            rigidbody2D.AddForce(new Vector2(-1, 0) * 100);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             //transform.Translate(0, -1, 0);
-            rigidbody2D.AddForce(new Vector2(0, -1) * 10);
+            rigidbody2D.AddForce(new Vector2(0, -1) * 100);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             //transform.Translate(1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(1, 0) * 10);
+            rigidbody2D.AddForce(new Vector2(1, 0) * 100);
         }
-        rigidbody2D.velocity = Math.Min();
+        if (rigidbody2D.totalForce.magnitude == 0)
+        {
+            rigidbody2D.velocity *= 0.98f;
+        }
+        else
+        {
+
+            rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
+        }
     }
 }
