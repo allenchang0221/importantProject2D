@@ -9,10 +9,11 @@ public class createMonster : MonoBehaviour
     {
         
     }
-    List<>
+    List<GameObject> monsters=new List<GameObject> ();
     // Update is called once per frame
     void Update()
     {
-        
+        monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
+        Debug.Log(monsters[0].name);
     }
 }
