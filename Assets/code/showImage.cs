@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class showImage : MonoBehaviour
 {
     public RawImage myRawImage;
-
+    int ans = 0;
     void Start()
     {
         int n = 2;
