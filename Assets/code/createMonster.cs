@@ -12,7 +12,7 @@ public class createMonster : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-    static List<Vector2> monstersPos = new List<Vector2>();
+    public static List<Vector2> monstersPos = new List<Vector2>();
     // Update is called once per frame
     void Update()
     {

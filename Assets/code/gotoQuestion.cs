@@ -35,6 +35,7 @@ public class gotoQuestion : MonoBehaviour
     public void hunt()
     {
         monsters.RemoveAt(beHunted);
+        createMonster.monstersPos.RemoveAt(beHunted);
         SceneManager.LoadScene("question");
     }
 }
