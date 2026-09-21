@@ -18,7 +18,7 @@ public class showImage : MonoBehaviour
         if (texture != null)
         {
             myRawImage.texture = texture;
-            Debug.Log(texture.name);
+            Debug.Log(texture.name.Last());
         }
     }
     private void Update()
