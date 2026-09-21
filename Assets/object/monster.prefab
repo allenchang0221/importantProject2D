@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8778364948013782621}
   - component: {fileID: 3603894313979531448}
-  - component: {fileID: -3407712419298736493}
   m_Layer: 0
   m_Name: monster
   m_TagString: monster
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3407712419298736493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5768608373716754905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce0caba8c6b4f44299c80883f5cba35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
