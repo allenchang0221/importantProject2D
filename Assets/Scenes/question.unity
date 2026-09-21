@@ -276,7 +276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 586430733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 642145844}
+        m_TargetAssemblyTypeName: showImage, Assembly-CSharp
+        m_MethodName: chooseAnswer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 586430730}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &586430733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +783,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789002929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 642145844}
+        m_TargetAssemblyTypeName: showImage, Assembly-CSharp
+        m_MethodName: chooseAnswer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 789002926}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &789002929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1091,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 973975734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 642145844}
+        m_TargetAssemblyTypeName: showImage, Assembly-CSharp
+        m_MethodName: chooseAnswer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 973975731}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &973975734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,7 +1625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1827557137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 642145844}
+        m_TargetAssemblyTypeName: showImage, Assembly-CSharp
+        m_MethodName: chooseAnswer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1827557134}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1827557137
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class showImage : MonoBehaviour
 {
     public RawImage myRawImage;
-    int ans = 0;
+    char ans = 'A';
     void Start()
     {
         int n = 2;
@@ -24,4 +24,8 @@ public class showImage : MonoBehaviour
     private void Update()
     {
     }
+    public void chooseAnswer(GameObject gameObject)
+    {
+        ans = gameObject.name[0];
+    } 
 }
