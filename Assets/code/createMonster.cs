@@ -12,7 +12,7 @@ public class createMonster : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-    List<Vector2> monstersPos=new List<Vector2> ();
+    static List<Vector2> monstersPos = new List<Vector2>();
     // Update is called once per frame
     void Update()
     {
@@ -20,12 +20,18 @@ public class createMonster : MonoBehaviour
         //Debug.Log(monsters.Count());
         if (monsters.Count < 5)
         {
-            Instantiate(monster);
-            monstersPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+            GameObject copy = Instantiate(monster);
+            monsters.Add(copy);
+            if (monstersPos.Count < monsters.Count)
+            {
+                monstersPos.Add(new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)));
+            }
+            monsters[monsters.Count - 1].transform.position = monstersPos[monsters.Count - 1];
+
         }
-        for(int i=0;i<) 
+        for (int i = 0; i < monsters.Count; i++)
         {
-            m.transform.Translate(new Vector2(Random.Range((1 / -60f), (1 / 60f)), Random.Range((1 / -60f), (1/60f))));
+            monsters[i].transform.Translate(new Vector2(Random.Range((1 / -60f), (1 / 60f)), Random.Range((1 / -60f), (1 / 60f))));
         }
     }
 }

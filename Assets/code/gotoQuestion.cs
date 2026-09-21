@@ -12,16 +12,18 @@ public class gotoQuestion : MonoBehaviour
     {
         button = GameObject.Find("hunt");
     }
-
+    int beHunted = 0;
+    List<GameObject> monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
     // Update is called once per frame
     void Update()
     {
-        List<GameObject> monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
+        monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
         foreach (GameObject moster in monsters)
         {
             if ((moster.transform.position - transform.position).magnitude < 0.5)
             {
                 button.transform.position = new Vector2(1000, 1000);
+                beHunted = monsters.IndexOf(moster);
                 break;
             }
             else
@@ -32,6 +34,7 @@ public class gotoQuestion : MonoBehaviour
     }
     public void hunt()
     {
+        monsters.RemoveAt(beHunted);
         SceneManager.LoadScene("question");
     }
 }
