@@ -42,11 +42,10 @@ public class playerControl : MonoBehaviour
         }
         if (rigidbody2D.totalForce.magnitude == 0)
         {
-            rigidbody2D.velocity *= 0.98f;
+            rigidbody2D.velocity *= 0f;
         }
         else
         {
-
             rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
         }
     }
