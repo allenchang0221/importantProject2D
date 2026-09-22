@@ -15,7 +15,7 @@ public class showImage : MonoBehaviour
     {
         int n = 2;
         List<Object> files = Resources.LoadAll("electronic").ToList();
-        //載入 Resources 資料夾內名為 MyPhoto 的圖片
+        //載入 Resources 資料夾內名為 electronic 的圖片
         texture = (Texture2D)(files[Random.Range(0, files.Count - files.Count)]);
 
         if (texture != null)
