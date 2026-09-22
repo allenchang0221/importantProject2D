@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/question.unity
     guid: f26dcd42caa320249bd38268a114101d
+  - enabled: 1
+    path: Assets/Scenes/showIsTrue.unity
+    guid: a2cc8f972c01b1045a8082dfa175caa3
   m_configObjects: {}

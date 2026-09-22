@@ -9,7 +9,7 @@ public class showImage : MonoBehaviour
 {
     public RawImage myRawImage;
     Texture2D texture;
-    bool correct = false;
+    public static bool correct = false;
     static char ans = 'Z';
     void Start()
     {
@@ -33,10 +33,7 @@ public class showImage : MonoBehaviour
     }
     public void submit()
     {
-        if (correct)
-        {
 
-        }
-        SceneManager.LoadScene("outDoor");
+        SceneManager.LoadScene("showIsTrue");
     }
 }
