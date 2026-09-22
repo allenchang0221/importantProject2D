@@ -16,6 +16,7 @@ public class createMonster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         List<GameObject> monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
         //Debug.Log(monsters.Count());
         if (monsters.Count < 5)

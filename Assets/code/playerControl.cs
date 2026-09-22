@@ -8,11 +8,12 @@ using UnityEngine.SceneManagement;
 public class playerControl : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
+    public static Vector2 playerPos=new Vector2(0,0);
     public GameObject camera;
     // Start is called before the first frame update
     void Start()
     {
-
+        transform.position = playerPos;
         rigidbody2D=this.GetComponent<Rigidbody2D>();
     }
 
@@ -48,5 +49,6 @@ public class playerControl : MonoBehaviour
         {
             rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
         }
+        playerPos = transform.position;
     }
 }
