@@ -18,12 +18,12 @@ public class gotoQuestion : MonoBehaviour
     void Update()
     {
         monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
-        foreach (GameObject moster in monsters)
+        foreach (Vector2 pos in createMonster.monstersPos)
         {
-            if ((moster.transform.position - transform.position).magnitude < 0.5)
+            if ((pos - new Vector2(transform.position.x,transform.position.y)).magnitude < 0.5)
             {
                 button.transform.position = new Vector2(1000, 1000);
-                beHunted = monsters.IndexOf(moster);
+                beHunted = monsters.IndexOf(createMonster.monstersPos);
                 break;
             }
             else

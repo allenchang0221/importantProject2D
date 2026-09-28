@@ -11,28 +11,21 @@ public class createMonster : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        while (monstersPos.Count < 5)
+        {
+            monstersPos.Add(new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)));
+        }
+        foreach (var pos in monstersPos)
+        {
+            GameObject copy= Instantiate(monster);
+            copy.transform.position = pos;
+        }
     }
     public static List<Vector2> monstersPos = new List<Vector2>();
     // Update is called once per frame
+    List<GameObject> monsters = new List<GameObject>();
     void Update()
     {
         
-        List<GameObject> monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
-        //Debug.Log(monsters.Count());
-        if (monsters.Count < 5)
-        {
-            GameObject copy = Instantiate(monster);
-            monsters.Add(copy);
-            if (monstersPos.Count < monsters.Count)
-            {
-                monstersPos.Add(new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)));
-            }
-            monsters[monsters.Count - 1].transform.position = monstersPos[monsters.Count - 1];
-
-        }
-        for (int i = 0; i < monsters.Count; i++)
-        {
-            monsters[i].transform.Translate(new Vector2(Random.Range((1 / -60f), (1 / 60f)), Random.Range((1 / -60f), (1 / 60f))));
-        }
     }
 }
