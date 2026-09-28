@@ -10,7 +10,7 @@ public class showIsTrue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = showImage.correct.ToString();
+        text.text = (showImage.correct==showImage.ans).ToString();
     }
 
     // Update is called once per frame
