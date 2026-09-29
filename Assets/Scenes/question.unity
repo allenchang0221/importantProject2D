@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRawImage: {fileID: 262141916}
+  Vector2: {x: 0, y: 0}
 --- !u!1 &666074681
 GameObject:
   m_ObjectHideFlags: 0
