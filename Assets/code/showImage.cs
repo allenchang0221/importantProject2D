@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 public class showImage : MonoBehaviour
 {
     public RawImage myRawImage;
+    public TextMeshProUGUI showYourAns;
     Texture2D texture;
     public static char correct = 'A';
     public Vector2 Vector2 = new Vector2();
@@ -39,6 +41,7 @@ public class showImage : MonoBehaviour
     public void chooseAnswer(GameObject gameObject)
     {
         ans = gameObject.name[0];
+        showYourAns.text = "YOUR ANSWER:  "+ans.ToString();
     }
     public void submit()
     {
