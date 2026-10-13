@@ -18,9 +18,11 @@ public class showImage : MonoBehaviour
     void Start()
     {
         int n = 2;
-        List<Texture2D> files = Resources.LoadAll<Texture2D>("electronic").ToList();
+        //List<Texture2D> files = Resources.LoadAll<Texture2D>("electronic").ToList();
+        //string allFileName = string.Join("{", files.Select(f => f.name));
+        List<string> allFilesName =PlayerPrefs.GetString("electronic").Split("{",System.StringSplitOptions.RemoveEmptyEntries).ToList();
         //載入 Resources 資料夾內名為 electronic 的圖片
-        texture = (Texture2D)(files[Random.Range(0, files.Count - 1)]);
+        texture = Resources.Load<Texture2D>($"electronic/{allFilesName[Random.Range(0, allFilesName.Count)]}");
 
         if (texture != null)
         {
@@ -33,7 +35,7 @@ public class showImage : MonoBehaviour
 
         }
         correct = texture.name.Last();
-        Debug.Log(texture.name);
+        //Debug.Log(texture.name);
     }
     private void Update()
     {
