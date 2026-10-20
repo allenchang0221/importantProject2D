@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class showImage : MonoBehaviour
         int n = 2;
         //List<Texture2D> files = Resources.LoadAll<Texture2D>("electronic").ToList();
         //string allFileName = string.Join("{", files.Select(f => f.name));
-        List<string> allFilesName =PlayerPrefs.GetString("electronic").Split("{",System.StringSplitOptions.RemoveEmptyEntries).ToList();
+        //File.WriteAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt"), allFileName);
+        List<string> allFilesName =File.ReadAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt")).Split("{",System.StringSplitOptions.RemoveEmptyEntries).ToList();
         //載入 Resources 資料夾內名為 electronic 的圖片
         texture = Resources.Load<Texture2D>($"electronic/{allFilesName[Random.Range(0, allFilesName.Count)]}");
 

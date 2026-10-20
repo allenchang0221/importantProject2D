@@ -19,6 +19,7 @@ public class gotoOutDoor : MonoBehaviour
     {
         if ((player.transform.position - transform.position).magnitude < 2 && Input.GetMouseButtonDown(0))
         {
+            playerControl.playerPos = Vector2.zero;
             SceneManager.LoadScene("outDoor");
         }
     }

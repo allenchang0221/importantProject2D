@@ -63261,6 +63261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 519420028}
+  mainNPC: {fileID: 5297716230608733568, guid: 37b38863cac5fde449a286a780311579, type: 3}
 --- !u!212 &818702554
 SpriteRenderer:
   m_ObjectHideFlags: 0

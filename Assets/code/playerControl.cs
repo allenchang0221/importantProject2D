@@ -8,38 +8,65 @@ using UnityEngine.SceneManagement;
 public class playerControl : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
-    public static Vector2 playerPos=new Vector2(0,0);
-    public GameObject camera;
+    public static Vector2 playerPos = new Vector2(0, 0);
+    public bool isTalking = false;
+    public GameObject camera, mainNPC, textBox;
+    GameObject controlNPC = null;
     // Start is called before the first frame update
     void Start()
     {
         transform.position = playerPos;
-        rigidbody2D=this.GetComponent<Rigidbody2D>();
+        rigidbody2D = this.GetComponent<Rigidbody2D>();
     }
-
+    int clock = 0;
     // Update is called once per frame
     void Update()
     {
-        camera.transform.position = new Vector3(transform.position.x,transform.position.y,camera.transform.position.z);
-        if (Input.GetKey(KeyCode.W))
+        clock++;
+        if (isTalking && controlNPC == null)
         {
-            //transform.Translate(0, 1, 0);
-            rigidbody2D.AddForce(new Vector2(0, 1)* 50);
+            controlNPC = Instantiate(mainNPC);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (!isTalking)
         {
-            //transform.Translate(-1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
+            Destroy(controlNPC);
+            controlNPC = null;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (controlNPC != null)
         {
-            //transform.Translate(0, -1, 0);
-            rigidbody2D.AddForce(new Vector2(0, -1) * 50);
+            controlNPC.transform.position = playerPos + new Vector2(mainNPC.transform.position.x, mainNPC.transform.position.y);
+            if (clock % 500 > 250)
+            {
+                controlNPC.transform.localScale = Vector3.one * 1.1f;
+            }
+            else
+            {
+                controlNPC.transform.localScale = Vector3.one;
+            }
         }
-        if (Input.GetKey(KeyCode.D))
+        camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
+        if (!isTalking)
         {
-            //transform.Translate(1, 0, 0);
-            rigidbody2D.AddForce(new Vector2(1, 0) * 50);
+            if (Input.GetKey(KeyCode.W))
+            {
+                //transform.Translate(0, 1, 0);
+                rigidbody2D.AddForce(new Vector2(0, 1) * 50);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                //transform.Translate(-1, 0, 0);
+                rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                //transform.Translate(0, -1, 0);
+                rigidbody2D.AddForce(new Vector2(0, -1) * 50);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                //transform.Translate(1, 0, 0);
+                rigidbody2D.AddForce(new Vector2(1, 0) * 50);
+            }
         }
         if (rigidbody2D.totalForce.magnitude == 0)
         {
