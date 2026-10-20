@@ -22,8 +22,6 @@ public class createMonster : MonoBehaviour
         }
     }
     public static List<Vector2> monstersPos = new List<Vector2>();
-    // Update is called once per frame
-    List<GameObject> monsters = new List<GameObject>();
     void Update()
     {
         

@@ -20,7 +20,7 @@ public class gotoQuestion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Vector2 pos in monsters.Select(m => m.transform.position).ToList())
+        foreach (Vector2 pos in createMonster.monstersPos)
         {
             if ((pos - new Vector2(transform.position.x,transform.position.y)).magnitude < 0.5)
             {
@@ -32,7 +32,6 @@ public class gotoQuestion : MonoBehaviour
             {
                 button.transform.position = new Vector2(10000, 1000);
             }
-            Debug.Log(230);
         }
     }
     public void hunt()

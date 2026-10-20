@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,11 +11,14 @@ public class playerControl : MonoBehaviour
     Rigidbody2D rigidbody2D;
     public static Vector2 playerPos = new Vector2(0, 0);
     public bool isTalking = false;
-    public GameObject camera, mainNPC/*, textBox*/;
-    GameObject controlNPC = null;
+    public GameObject camera, mainNPC, textBox,textBoxContainGameObject;
+    public Transform canvasTranform;
+    TextMeshProUGUI textBoxContain, textBoxContainControl=null;
+    GameObject controlNPC = null,controlTextBox;
     // Start is called before the first frame update
     void Start()
     {
+        textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = this.GetComponent<Rigidbody2D>();
     }
@@ -25,17 +29,22 @@ public class playerControl : MonoBehaviour
         clock++;
         if (isTalking && controlNPC == null)
         {
+            textBoxContainControl = Instantiate(textBoxContain, canvasTranform);
+            textBoxContainControl.gameObject.SetActive(true);
+            controlTextBox = Instantiate(textBox);
             controlNPC = Instantiate(mainNPC);
         }
         if (!isTalking)
         {
             Destroy(controlNPC);
+            Destroy(textBoxContainControl.gameObject);
+            Destroy(controlTextBox);
             controlNPC = null;
         }
         if (controlNPC != null)
         {
             controlNPC.transform.position = playerPos + new Vector2(mainNPC.transform.position.x, mainNPC.transform.position.y);
-            if (clock % 500 > 250)
+            if (clock % 240 > 120)
             {
                 controlNPC.transform.localScale = Vector3.one * 1.1f;
             }

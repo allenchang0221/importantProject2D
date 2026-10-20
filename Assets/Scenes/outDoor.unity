@@ -363,9 +363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b377c5b89f104c4b85ea8f7e8ab75f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTalking: 0
+  isTalking: 1
   camera: {fileID: 1123423370}
   mainNPC: {fileID: 5297716230608733568, guid: 37b38863cac5fde449a286a780311579, type: 3}
+  textBox: {fileID: 501612798401029074, guid: 1c53ad76e208cb54ebe45a40f6048582, type: 3}
+  textBoxContainGameObject: {fileID: 6512471571707435931, guid: ee407d95651e03941b9e273639304113, type: 3}
+  canvasTranform: {fileID: 1305015459}
 --- !u!212 &464909613
 SpriteRenderer:
   m_ObjectHideFlags: 0
