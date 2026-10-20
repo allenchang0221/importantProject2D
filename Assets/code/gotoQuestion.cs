@@ -16,11 +16,11 @@ public class gotoQuestion : MonoBehaviour
     }
     Vector2 huntButtonOriginalPos;
     int beHunted = 0;
-    List<GameObject> monsters = GameObject.FindGameObjectsWithTag("monster").ToList();
+    List<GameObject> monsters;
     // Update is called once per frame
     void Update()
     {
-        foreach (Vector2 pos in createMonster.monstersPos)
+        foreach (Vector2 pos in monsters.Select(m => m.transform.position).ToList())
         {
             if ((pos - new Vector2(transform.position.x,transform.position.y)).magnitude < 0.5)
             {
@@ -32,6 +32,7 @@ public class gotoQuestion : MonoBehaviour
             {
                 button.transform.position = new Vector2(10000, 1000);
             }
+            Debug.Log(230);
         }
     }
     public void hunt()

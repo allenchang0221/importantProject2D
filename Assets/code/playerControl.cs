@@ -10,7 +10,7 @@ public class playerControl : MonoBehaviour
     Rigidbody2D rigidbody2D;
     public static Vector2 playerPos = new Vector2(0, 0);
     public bool isTalking = false;
-    public GameObject camera, mainNPC, textBox;
+    public GameObject camera, mainNPC/*, textBox*/;
     GameObject controlNPC = null;
     // Start is called before the first frame update
     void Start()
@@ -67,14 +67,15 @@ public class playerControl : MonoBehaviour
                 //transform.Translate(1, 0, 0);
                 rigidbody2D.AddForce(new Vector2(1, 0) * 50);
             }
-        }
-        if (rigidbody2D.totalForce.magnitude == 0)
-        {
-            rigidbody2D.velocity *= 0f;
-        }
-        else
-        {
-            rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
+            if (rigidbody2D.totalForce.magnitude == 0)
+            {
+                rigidbody2D.velocity *= 0f;
+            }
+            else
+            {
+                if(rigidbody2D.velocity.magnitude>0)
+                rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
+            }
         }
         playerPos = transform.position;
     }
