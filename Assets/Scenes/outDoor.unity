@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b377c5b89f104c4b85ea8f7e8ab75f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTalking: 1
+  isTalking: 0
   camera: {fileID: 1123423370}
   mainNPC: {fileID: 5297716230608733568, guid: 37b38863cac5fde449a286a780311579, type: 3}
   textBox: {fileID: 501612798401029074, guid: 1c53ad76e208cb54ebe45a40f6048582, type: 3}
@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 1123423372}
   - component: {fileID: 1123423371}
   - component: {fileID: 1123423374}
+  - component: {fileID: 1123423375}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -687,6 +688,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 5768608373716754905, guid: fe76bd68d7426de43b660bdbf87d3854, type: 3}
+--- !u!114 &1123423375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123423370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adc7bd1327b74346af5ad5542a8fec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305015455
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,10 +36,14 @@ public class playerControl : MonoBehaviour
         }
         if (!isTalking)
         {
-            Destroy(controlNPC);
-            Destroy(textBoxContainControl.gameObject);
-            Destroy(controlTextBox);
-            controlNPC = null;
+            try
+            {
+                Destroy(controlNPC);
+                Destroy(textBoxContainControl.gameObject);
+                Destroy(controlTextBox);
+                controlNPC = null;
+            }
+            catch { }
         }
         if (controlNPC != null)
         {
