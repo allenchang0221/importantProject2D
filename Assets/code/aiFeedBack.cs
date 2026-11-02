@@ -42,26 +42,26 @@ public class aiFeedBack : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("① Start() 已執行");
+        //Debug.Log("① Start() 已執行");
 
-        string key = System.Environment.GetEnvironmentVariable(
-            "GEMINI_API_KEY",
-            System.EnvironmentVariableTarget.User
-        );
+        //string key = System.Environment.GetEnvironmentVariable(
+        //    "GEMINI_API_KEY",
+        //    System.EnvironmentVariableTarget.User
+        //);
 
-        Debug.Log(
-            string.IsNullOrWhiteSpace(key)
-                ? "② 使用者環境變數讀取失敗"
-                : "② 成功讀取使用者環境變數"
-        );
+        //Debug.Log(
+        //    string.IsNullOrWhiteSpace(key)
+        //        ? "② 使用者環境變數讀取失敗"
+        //        : "② 成功讀取使用者環境變數"
+        //);
 
-        if (string.IsNullOrWhiteSpace(key))
-            return;
+        //if (string.IsNullOrWhiteSpace(key))
+        //    return;
 
-        apiKey = key;
+        //apiKey = key;
 
-        Debug.Log("③ 準備呼叫 Gemini");
-        StartCoroutine(SendToGemini("你好"));
+        //Debug.Log("③ 準備呼叫 Gemini");
+        //StartCoroutine(SendToGemini("你好"));
     }
 
     IEnumerator SendToGemini(string prompt)

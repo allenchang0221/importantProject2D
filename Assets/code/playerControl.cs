@@ -20,7 +20,7 @@ public class playerControl : MonoBehaviour
     {
         textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
-        rigidbody2D = this.GetComponent<Rigidbody2D>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
     int clock = 0;
     // Update is called once per frame
@@ -62,32 +62,32 @@ public class playerControl : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                //transform.Translate(0, 1, 0);
-                rigidbody2D.AddForce(new Vector2(0, 1) * 50);
+                transform.Translate(0, 1/60f, 0);
+                //rigidbody2D.AddForce(new Vector2(0, 1) * 50);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                //transform.Translate(-1, 0, 0);
-                rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
+                transform.Translate(-1/60f, 0, 0);
+                //rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                //transform.Translate(0, -1, 0);
-                rigidbody2D.AddForce(new Vector2(0, -1) * 50);
+                transform.Translate(0, -1/60f, 0);
+                //rigidbody2D.AddForce(new Vector2(0, -1) * 50);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                //transform.Translate(1, 0, 0);
-                rigidbody2D.AddForce(new Vector2(1, 0) * 50);
+                transform.Translate(1/60f, 0, 0);
+                //rigidbody2D.AddForce(new Vector2(1, 0) * 50);
             }
-            if (rigidbody2D.totalForce.magnitude == 0)
-            {
-                rigidbody2D.velocity *= 0f;
-            }
+            //if (rigidbody2D.totalForce.magnitude == 0)
+            //{
+            //    rigidbody2D.velocity *= 0f;
+            //}
             else
             {
-                if(rigidbody2D.velocity.magnitude>0)
-                rigidbody2D.velocity *= 2 / rigidbody2D.velocity.magnitude;
+                //if(rigidbody2D.velocity.magnitude>0)
+                //rigidbody2D.velocity = Vector2.zero;
             }
         }
         playerPos = transform.position;
