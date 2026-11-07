@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,7 +22,7 @@ public class playerControl : MonoBehaviour
         textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = GetComponent<Rigidbody2D>();
-        //string a=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt"));
+        string a=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt")).Replace("\r","");
     }
     int clock = 0;
     // Update is called once per frame
