@@ -21,6 +21,7 @@ public class playerControl : MonoBehaviour
         textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        //string a=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt"));
     }
     int clock = 0;
     // Update is called once per frame
