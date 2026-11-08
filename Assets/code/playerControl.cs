@@ -26,7 +26,7 @@ public class playerControl : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         data=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r","").Split("\n",StringSplitOptions.RemoveEmptyEntries);
     }
-    int clock = 0;
+    int clock = 0,subStringIdx=0;
     // Update is called once per frame
     void Update()
     {
@@ -52,7 +52,7 @@ public class playerControl : MonoBehaviour
         }
         else
         {
-            textBoxContainControl.text = data[idx%data.Length];
+            textBoxContainControl.text = data[idx%data.Length].Substring(0,Math.Min(data[idx%data.Length].Length,subStringIdx));
         }
         if (controlNPC != null)
         {
@@ -65,9 +65,14 @@ public class playerControl : MonoBehaviour
             {
                 controlNPC.transform.localScale = Vector3.one;
             }
-            if (clock % 240 == 0)
+            if (subStringIdx-6> data[idx % data.Length].Length)
             {
                 idx++;
+                subStringIdx = 0;
+            }
+            if (clock % 30 == 0)
+            {
+                subStringIdx++;
             }
         }
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
