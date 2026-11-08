@@ -16,13 +16,15 @@ public class playerControl : MonoBehaviour
     public Transform canvasTranform;
     TextMeshProUGUI textBoxContain, textBoxContainControl=null;
     GameObject controlNPC = null,controlTextBox;
+    int idx = 0;
+    string[] data;
     // Start is called before the first frame update
     void Start()
     {
         textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = GetComponent<Rigidbody2D>();
-        string a=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/electronic.txt")).Replace("\r","");
+        data=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r","").Split("\n",StringSplitOptions.RemoveEmptyEntries);
     }
     int clock = 0;
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class playerControl : MonoBehaviour
         }
         if (!isTalking)
         {
+            idx = 0;
             try
             {
                 Destroy(controlNPC);
@@ -46,6 +49,10 @@ public class playerControl : MonoBehaviour
                 controlNPC = null;
             }
             catch { }
+        }
+        else
+        {
+            textBoxContainControl.text = data[idx%data.Length];
         }
         if (controlNPC != null)
         {
@@ -57,6 +64,10 @@ public class playerControl : MonoBehaviour
             else
             {
                 controlNPC.transform.localScale = Vector3.one;
+            }
+            if (clock % 240 == 0)
+            {
+                idx++;
             }
         }
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
