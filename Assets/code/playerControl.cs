@@ -65,12 +65,12 @@ public class playerControl : MonoBehaviour
             {
                 controlNPC.transform.localScale = Vector3.one;
             }
-            if (subStringIdx-6> data[idx % data.Length].Length)
+            if (subStringIdx-30> data[idx % data.Length].Length)
             {
                 idx++;
                 subStringIdx = 0;
             }
-            if (clock % 30 == 0)
+            if (clock % 6 == 0)
             {
                 subStringIdx++;
             }
