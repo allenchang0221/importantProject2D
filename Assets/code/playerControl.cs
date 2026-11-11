@@ -18,6 +18,7 @@ public class playerControl : MonoBehaviour
     GameObject controlNPC = null,controlTextBox;
     Animator animator;
     int idx = 0;
+    bool dialogAuto=false;
     string[] data;
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,7 @@ public class playerControl : MonoBehaviour
         if (controlNPC != null)
         {
             controlNPC.transform.position = playerPos + new Vector2(mainNPC.transform.position.x, mainNPC.transform.position.y);
-            if (clock % 240 > 120)
+            if (clock % 480 > 240)
             {
                 controlNPC.transform.localScale = Vector3.one * 1.1f;
             }
@@ -67,12 +68,12 @@ public class playerControl : MonoBehaviour
             {
                 controlNPC.transform.localScale = Vector3.one;
             }
-            if (subStringIdx-30> data[idx % data.Length].Length)
+            if (subStringIdx-1> data[idx % data.Length].Length && (dialogAuto||Input.GetMouseButtonUp(0)))
             {
                 idx++;
                 subStringIdx = 0;
             }
-            if (clock % 6 == 0)
+            if (clock % 12 == 0)
             {
                 subStringIdx++;
             }
