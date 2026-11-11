@@ -16,6 +16,7 @@ public class playerControl : MonoBehaviour
     public Transform canvasTranform;
     TextMeshProUGUI textBoxContain, textBoxContainControl=null;
     GameObject controlNPC = null,controlTextBox;
+    Animator animator;
     int idx = 0;
     string[] data;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class playerControl : MonoBehaviour
         textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         data=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r","").Split("\n",StringSplitOptions.RemoveEmptyEntries);
     }
     int clock = 0,subStringIdx=0;
@@ -78,22 +80,23 @@ public class playerControl : MonoBehaviour
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
         if (!isTalking)
         {
+            animator.speed = 1;
             if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(0, 1/60f, 0);
                 //rigidbody2D.AddForce(new Vector2(0, 1) * 50);
             }
-            if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(-1/60f, 0, 0);
                 //rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
             }
-            if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
             {
                 transform.Translate(0, -1/60f, 0);
                 //rigidbody2D.AddForce(new Vector2(0, -1) * 50);
             }
-            if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D))
             {
                 transform.Translate(1/60f, 0, 0);
                 //rigidbody2D.AddForce(new Vector2(1, 0) * 50);
@@ -106,6 +109,7 @@ public class playerControl : MonoBehaviour
             {
                 //if(rigidbody2D.velocity.magnitude>0)
                 //rigidbody2D.velocity = Vector2.zero;
+                animator.speed = 0;
             }
         }
         playerPos = transform.position;
