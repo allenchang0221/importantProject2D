@@ -13,7 +13,7 @@ public class createMonster : MonoBehaviour
         Application.targetFrameRate = 60;
         while (monstersPos.Count < 5)
         {
-            monstersPos.Add(new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)));
+            monstersPos.Add(new Vector2(Random.Range(-5, 5), Random.Range(-5, 5)));
         }
         foreach (var pos in monstersPos)
         {
