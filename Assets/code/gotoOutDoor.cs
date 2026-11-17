@@ -14,7 +14,6 @@ public class gotoOutDoor : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("player");
-        particle.Play();
         eP = particle.transform.position;   
     }
 
@@ -23,13 +22,16 @@ public class gotoOutDoor : MonoBehaviour
     {
         if ((player.transform.position - transform.position).magnitude < 2 && Input.GetMouseButtonDown(0))
         {
-            playerControl.playerPos = Vector2.zero;
+            playerControl.playerPos = new Vector3(0,0,0);
             SceneManager.LoadScene("outDoor");
         }
         else
         {
-            if((player.transform.position - transform.position).magnitude < 2) particle.transform.position=eP;
-            else particle.transform.position = new Vector3(1000f, 1000f, 1000f);
+            if((player.transform.position - transform.position).magnitude < 2){ particle.transform.position = transform.position;if(!particle.isPlaying)particle.Play(); }
+            else {
+                particle.transform.position = new Vector3(1000f, 1000f, 1000f);
+                particle.Stop();
+            }
         }
     }
 }
