@@ -12,24 +12,25 @@ public class playerControl : MonoBehaviour
     Rigidbody2D rigidbody2D;
     public static Vector2 playerPos = new Vector2(0, 0);
     public bool isTalking = false;
-    public GameObject camera, mainNPC, textBox,textBoxContainGameObject;
+    public GameObject camera, mainNPC, textBox, textBoxContainGameObject;
     public Transform canvasTranform;
-    TextMeshProUGUI textBoxContain, textBoxContainControl=null;
-    GameObject controlNPC = null,controlTextBox;
+    TextMeshProUGUI textBoxContain, textBoxContainControl = null;
+    GameObject controlNPC = null, controlTextBox;
     Animator animator;
     int idx = 0;
-    bool dialogAuto=false;
+    bool dialogAuto = false;
     string[] data;
     // Start is called before the first frame update
     void Start()
     {
-        textBoxContain= textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
+        Application.targetFrameRate = 60;
+        textBoxContain = textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
         transform.position = playerPos;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        data=File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r","").Split("\n",StringSplitOptions.RemoveEmptyEntries);
+        data = File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
     }
-    int clock = 0,subStringIdx=0;
+    int clock = 0, subStringIdx = 0;
     // Update is called once per frame
     void Update()
     {
@@ -55,7 +56,7 @@ public class playerControl : MonoBehaviour
         }
         else
         {
-            textBoxContainControl.text = data[idx%data.Length].Substring(0,Math.Min(data[idx%data.Length].Length,subStringIdx));
+            textBoxContainControl.text = data[idx % data.Length].Substring(0, Math.Min(data[idx % data.Length].Length, subStringIdx));
         }
         if (controlNPC != null)
         {
@@ -68,7 +69,7 @@ public class playerControl : MonoBehaviour
             {
                 controlNPC.transform.localScale = Vector3.one;
             }
-            if (subStringIdx-1> data[idx % data.Length].Length && (dialogAuto||Input.GetMouseButtonUp(0)))
+            if (subStringIdx - 1 > data[idx % data.Length].Length && (dialogAuto || Input.GetMouseButtonUp(0)))
             {
                 idx++;
                 subStringIdx = 0;
@@ -84,22 +85,22 @@ public class playerControl : MonoBehaviour
             animator.speed = 1;
             if (Input.GetKey(KeyCode.W))
             {
-                transform.Translate(0, 1/60f, 0);
+                transform.Translate(0, 1 / 15f, 0);
                 //rigidbody2D.AddForce(new Vector2(0, 1) * 50);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(-1/60f, 0, 0);
+                transform.Translate(-1 / 15f, 0, 0);
                 //rigidbody2D.AddForce(new Vector2(-1, 0) * 50);
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                transform.Translate(0, -1/60f, 0);
+                transform.Translate(0, -1 / 15f, 0);
                 //rigidbody2D.AddForce(new Vector2(0, -1) * 50);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(1/60f, 0, 0);
+                transform.Translate(1 / 15f, 0, 0);
                 //rigidbody2D.AddForce(new Vector2(1, 0) * 50);
             }
             //if (rigidbody2D.totalForce.magnitude == 0)
