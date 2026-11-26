@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class createMonster : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class createMonster : MonoBehaviour
         {
             GameObject copy= Instantiate(monster);
             copy.transform.position = pos;
+            copy.GetComponent<SpriteRenderer>().sprite= Resources.LoadAll<Sprite>("monsterImage").ToList()[(int)Mathf.Abs(pos.x*pos.y*100)% 60];
         }
     }
     public static List<Vector2> monstersPos = new List<Vector2>();

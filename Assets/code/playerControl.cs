@@ -25,7 +25,8 @@ public class playerControl : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         textBoxContain = textBoxContainGameObject.GetComponent<TextMeshProUGUI>();
-        transform.position = playerPos;
+        transform.position = new Vector2(playerPos.x,playerPos.y);
+        Debug.Log(playerPos);
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         data = File.ReadAllText(Path.Combine(Application.dataPath, "Resources/beginDialog.txt")).Replace("\r", "").Split("\n", StringSplitOptions.RemoveEmptyEntries);
@@ -114,6 +115,5 @@ public class playerControl : MonoBehaviour
                 animator.speed = 0;
             }
         }
-        playerPos = transform.position;
     }
 }

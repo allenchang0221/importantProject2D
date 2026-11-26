@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class gotoOutDoor : MonoBehaviour
 {
+    /*
+     OR BACK HOME
+     
+     */
     static int world = 1;
     GameObject player;
     Vector3 eP;
@@ -22,8 +26,8 @@ public class gotoOutDoor : MonoBehaviour
     {
         if ((player.transform.position - transform.position).magnitude < 2 && Input.GetMouseButtonDown(0))
         {
-            playerControl.playerPos = new Vector3(0,0,0);
-            SceneManager.LoadScene("outDoor");
+            playerControl.playerPos = new Vector2(0,0);
+            SceneManager.LoadScene(gameObject.name);
         }
         else
         {

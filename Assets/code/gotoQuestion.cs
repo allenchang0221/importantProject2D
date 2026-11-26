@@ -36,6 +36,7 @@ public class gotoQuestion : MonoBehaviour
     }
     public void hunt()
     {
+        playerControl.playerPos = GameObject.Find("player").transform.position;
         createMonster.monstersPos.RemoveAt(beHunted);
         SceneManager.LoadScene("question");
     }
